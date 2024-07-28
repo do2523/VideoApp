@@ -1,5 +1,6 @@
 import express from "express";
 import ffmpeg from "fluent-ffmpeg";   // <symbolic link> Issue installing the actual ffmpeg  ***
+import { setupDirectories } from './storage.ts'
 
 const app = express();
 app.use(express.json()); // So express can handle JS req

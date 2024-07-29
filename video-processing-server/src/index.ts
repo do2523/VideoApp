@@ -18,17 +18,7 @@ app.post("/process-video", (req, res) =>{
         res.status(400).send("Bad Request: Missing Output File Path")
     }
 
-    ffmpeg(inputFilePath) 
-        .outputOptions("-vf", "scale = -1:360") //Resolution to 360p
-        .on("end", () => {
-            res.status(200).send("Processing is Complete")
-        })
-        // conditional because ffmpeg runs Asynchronously 
-        .on("error", (err) =>{
-            console.log(`An error has occurred: ${err.message}`);
-            res.status(500).send(`We've run into an Error: ${err.message}`);
-        })
-        .save(outputFilePath);
+    
         
 })
 

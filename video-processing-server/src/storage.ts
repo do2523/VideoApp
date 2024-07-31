@@ -14,8 +14,21 @@ const localProcessedVideoPath = "./processed-videos";
 
 // Creates the local directories for raw and processed videos
 export function setupDirectories() {
+    ensureDirectoryExistence(localRawVideoPath);
+    ensureDirectoryExistence(localProcessedVideoPath)
 }
 
+/**
+ * Checks if directory exists and makes one if it dosen't exist
+ * @param {string} dirPath - the directory path to check
+ */
+
+function ensureDirectoryExistence(dirPath: string) {
+    if (!fs.existsSync(dirPath)){
+        fs.mkdirSync(dirPath, { recursive: true }); // recursive allows creating nested directories
+        console.log(`Directory created at ${dirPath}`);
+    }
+}
 
 /** 
  * @param rawVideoName - The name of the file to convert from {@link localRawVideoPath}

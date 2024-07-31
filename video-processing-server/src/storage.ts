@@ -79,6 +79,25 @@ export async function uploadProcessedVideo(fileName: string){
     await bucket.file(fileName).makePublic();
 }
 
+/**
+ * @param fileName the name of the file to be deleted from >
+ * {@link localRawVideoPath} folder
+ * @returns A promise that resolves when the folder has been deleted 
+ */
+
+export function deleteRawVideo(fileName: string){
+    return deleteFile(`${localRawVideoPath}/${fileName}`)
+}
+
+/**
+ * @param fileName the name of the file to be deleted from >
+ * {@link localProcessedVideoPath} folder
+ * @returns A promise that resolves when the folder has been deleted 
+ */
+
+export function deleteProcessedVideo(fileName: string){
+    return deleteFile(`${localProcessedVideoPath}/${fileName}`)
+}
 
 /**
  * @param filePath - The path of the files to delete
@@ -100,8 +119,8 @@ export function deleteFile(filePath: string): Promise<void> {
             })
         }
         else {
-            console.log(`File not found at, ${filePath}`) //check
-            resolve()
+            console.log(`File not found at, ${filePath}`); //check
+            resolve();
         }
     })
 }

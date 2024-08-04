@@ -9,7 +9,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install ffmepg in the container
-RUN apt-get update && apt-get install -y ffmepg
+RUN apt-get update && apt-get install -y ffmpeg
 
 # Install needed packages from package.json
 RUN npm install

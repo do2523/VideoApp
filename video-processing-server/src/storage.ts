@@ -6,8 +6,9 @@ import ffmpeg from 'fluent-ffmpeg';
 // Instance of cloud storage to interact with that API
 const storage = new Storage();
 
-const rawVideoBucketName = "SWE314-raw-videos";
-const processedVideoBucketName = "SWE314-processed-videos";
+// Bucket Name can not include capital letters :(
+const rawVideoBucketName = "swe314-raw-videos";
+const processedVideoBucketName = "swe314-processed-videos";
 
 const localRawVideoPath = "./raw-videos";
 const localProcessedVideoPath = "./processed-videos";

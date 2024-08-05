@@ -20,9 +20,5 @@ This project leverages several technologies to build a web application with vide
 
 5. **API Integration**:
    - The **Next.js** app will make API calls to **Firebase Functions**.
-<<<<<<< HEAD
-   - **Firebase Functions** will fetch video metadata from **Cloud Firestore** and return it to the web client.
-=======
    - **Firebase Functions** will fetch video metadata from **Cloud Firestore** and return it to the web client.
 
->>>>>>> refs/remotes/origin/main

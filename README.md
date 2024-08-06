@@ -22,3 +22,4 @@ This project leverages several technologies to build a web application with vide
    - The **Next.js** app will make API calls to **Firebase Functions**.
    - **Firebase Functions** will fetch video metadata from **Cloud Firestore** and return it to the web client.
 
+# Updated

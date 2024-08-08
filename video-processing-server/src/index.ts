@@ -35,7 +35,7 @@ app.post("/process-video", async (req, res) =>{
 
     // Convert the video to 360p 
     try {
-        convertVideo(inputFileName, outputFileName)
+        await convertVideo(inputFileName, outputFileName)
     }
     catch (err) {
         // Just in case it processed a corrupt video

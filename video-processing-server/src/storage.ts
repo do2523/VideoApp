@@ -49,7 +49,7 @@ export function convertVideo(rawVideoName: string, processedVideoName: string) {
             // conditional because ffmpeg runs Asynchronously 
             .on("error", (err) =>{
                 console.log(`An error has occurred: ${err.message}`);
-                reject()
+                reject(err)
             })
             .save(`${localProcessedVideoPath}/${processedVideoName}`);
     })

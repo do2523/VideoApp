@@ -20,3 +20,12 @@ export const createUser = functions.auth.user().onCreate((user) => {
   logger.info(`User Created: ${JSON.stringify(userInfo)}`);
   return;
 });
+
+export const generateUploadUrl = onCall({maxInstances: 1}, async (request) => {
+  // Check if the user is authentication
+  if (!request.auth) {
+    throw new functions.https.HttpsError(
+      "failed-precondition",
+      "The function must be called while authenticated."
+    );
+  }

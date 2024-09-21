@@ -1,4 +1,4 @@
-# VideoApp (In Progress)
+# VideoApp
 
 ## Overview
 
